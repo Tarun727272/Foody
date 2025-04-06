@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyFoody Restaurant</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f9f9f9;
+        line-height: 1.8;
+        color: #333;
+      }
+
+      header {
+        background: #ff6a00;
+        padding: 20px;
+        color: whitesmoke;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-item {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 15px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background 0.3s ease;
+        border-radius: 5px;
+      }
+
+      a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+
+      /* Sections */
+      section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      .home-content {
+        background: linear-gradient(
+          45deg,
+          rgba(255, 106, 0, 0.7),
+          rgba(238, 9, 121, 0.7)
+        );
+        color: white;
+        padding: 100px 20px;
+        animation: fadeIn 3s ease-out;
+      }
+
+      .image-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        animation: slideUp 3s ease-out;
+      }
+
+      .image-gallery img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        animation: fadeInImage 1s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInImage {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* About Page */
+      .about-content {
+        animation: fadeIn 3s ease-out;
+        background-color: #fff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 40px 20px;
+      }
+
+      /* Menu Page */
+      .menu-content {
+        background: #fff;
+        padding: 40px 20px;
+        animation: fadeIn 3s ease-out;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+      }
+
+      .dropbtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #45a049;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      /* Special Day */
+      .special-day {
+        background: #f5f5f5;
+        padding: 60px 20px;
+        animation: fadeIn 3s ease-out;
+      }
+
+      /* Contact Us */
+      .contact-form {
+        background-color: #fff;
+        padding: 40px 20px;
+        margin-top: 20px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 3s ease-out;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+      }
+
+      button {
+        background-color: #ff6a00;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #ee0979;
+      }
+
+      /* Footer */
+      footer {
+        background: #ff6a00;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .image-gallery img {
+          width: 80px;
+          height: 80px;
+        }
+
+        .dropdown-content a {
+          padding: 10px 15px;
+        }
+
+        button {
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">MyFoody Restaurant</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#special">Special Day</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-content">
+      <h1>Welcome to MyFoody Restaurant!</h1>
+      <p>Experience the best food at the best prices!</p>
+      <div class="image-gallery">
+        <img src="./img/0 (1).jpg" alt="Food Image 1" />
+        <img src="./img/0 (10).jpg" alt="Food Image 2" />
+        <img src="./img/0 (22).jpg" alt="Food Image 3" />
+        <img src="./img/0 (1).jpg" alt="Food Image 1" />
+        <img src="./img/0 (10).jpg" alt="Food Image 2" />
+        <img src="./img/0 (22).jpg" alt="Food Image 3" />
+        <img src="./img/0 (1).jpg" alt="Food Image 1" />
+        <img src="./img/0 (10).jpg" alt="Food Image 2" />
+        <img src="./img/0 (22).jpg" alt="Food Image 3" />
+
+        <!-- Add more images as needed -->
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-content">
+      <h2>About Us</h2>
+      <p>
+        We established MyFoody Restaurant in 2010, with a mission to provide the
+        best culinary experience for all our customers. Our menu includes a mix
+        of Indian, Chinese, and Western foods, with a focus on quality
+        ingredients and great taste.
+      </p>
+      <h3>Customer Feedback:</h3>
+      <blockquote>
+        "Amazing food! Will definitely come back!" - John Doe
+      </blockquote>
+      <blockquote>"Best place for a family dinner!" - Jane Smith</blockquote>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-content">
+      <h2>Our Menu</h2>
+      <div class="dropdown">
+        <button class="dropbtn">Breakfast</button>
+        <div class="dropdown-content">
+          <a href="#">Veg Toast</a>
+          <a href="#">Pancakes</a>
+          <a href="#">Egg Sandwich</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Lunch</button>
+        <div class="dropdown-content">
+          <a href="#">Biryani</a>
+          <a href="#">Paneer Tikka</a>
+          <a href="#">Chicken Curry</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Dinner</button>
+        <div class="dropdown-content">
+          <a href="#">Butter Chicken</a>
+          <a href="#">Pizza</a>
+          <a href="#">Salads</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Juices</button>
+        <div class="dropdown-content">
+          <a href="#">Orange Juice</a>
+          <a href="#">Mango Juice</a>
+          <a href="#">Apple Juice</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Day Section -->
+    <section id="special" class="special-day">
+      <h2>Special Day Offers</h2>
+      <p>Get 50% off on all items during our special day sale!</p>
+      <img
+        src="https://source.unsplash.com/800x600/?food,discount"
+        alt="Special Offer"
+      />
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-form">
+      <h2>Contact Us</h2>
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 MyFoody Restaurant | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
