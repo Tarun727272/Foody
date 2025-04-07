@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechEdu - BTech Computer Science Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="TechEdu Logo">
+            <span>TechEdu</span>
+        </a>
+        
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#about">About</a>
+            <a href="#faculty">Faculty</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+        </div>
+        
+        <div class="search-form">
+            <input type="search" placeholder="Search courses...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+    </header>
+
+    <!-- Login Form -->
+    <div class="login-form">
+        <form action="">
+            <h3>Login</h3>
+            <input type="email" placeholder="Enter your email" class="box">
+            <input type="password" placeholder="Enter your password" class="box">
+            <div class="remember">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <input type="submit" value="Login now" class="btn">
+            <p>Forgot password? <a href="#">Click here</a></p>
+            <p>Don't have an account? <a href="#">Create one</a></p>
+        </form>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Advance Your <span>Computer Science</span> Career</h3>
+            <p>Comprehensive BTech program with industry-aligned curriculum, hands-on projects, and expert faculty guidance.</p>
+            <a href="#courses" class="btn">Explore Courses</a>
+        </div>
+        
+        <div class="image">
+            <img src="images/hero-bg.jpg" alt="Students learning">
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <h1 class="heading">Our <span>Courses</span></h1>
+        
+        <div class="box-container">
+            <!-- Course 1 -->
+            <div class="box">
+                <div class="image">
+                    <img src="images/course1.jpg" alt="Programming Fundamentals">
+                    <h3>Programming Fundamentals</h3>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <h3>Programming Fundamentals</h3>
+                    <p>Master the basics of programming with C, C++, and Python. Learn algorithms and problem-solving techniques.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="far fa-clock"></i> 6 months</span>
+                        <span><i class="far fa-user"></i> 100+ students</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Course 2 -->
+            <div class="box">
+                <div class="image">
+                    <img src="images/course2.jpg" alt="Data Structures & Algorithms">
+                    <h3>Data Structures & Algorithms</h3>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5.0)</span>
+                    </div>
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Learn essential data structures and algorithms with practical implementations and interview preparation.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="far fa-clock"></i> 8 months</span>
+                        <span><i class="far fa-user"></i> 150+ students</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Course 3 -->
+            <div class="box">
+                <div class="image">
+                    <img src="images/course3.jpg" alt="Web Development">
+                    <h3>Full Stack Web Development</h3>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.7)</span>
+                    </div>
+                    <h3>Full Stack Web Development</h3>
+                    <p>Master front-end and back-end technologies including HTML, CSS, JavaScript, Node.js, and databases.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="far fa-clock"></i> 9 months</span>
+                        <span><i class="far fa-user"></i> 200+ students</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Course 4 -->
+            <div class="box">
+                <div class="image">
+                    <img src="images/course4.jpg" alt="Machine Learning">
+                    <h3>Machine Learning & AI</h3>
+                </div>
+                <div class="content">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <h3>Machine Learning & AI</h3>
+                    <p>Introduction to machine learning algorithms, neural networks, and artificial intelligence applications.</p>
+                    <a href="#" class="btn">Enroll Now</a>
+                    <div class="icons">
+                        <span><i class="far fa-clock"></i> 10 months</span>
+                        <span><i class="far fa-user"></i> 120+ students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="load-more">
+            <a href="#" class="btn">Load More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h1 class="heading"><span>About</span> Us</h1>
+        
+        <div class="row">
+            <div class="image">
+                <img src="images/hero-bg.jpg" alt="About TechEdu">
+            </div>
+            
+            <div class="content">
+                <h3>Why Choose Us?</h3>
+                <p>TechEdu is a premier online education platform specializing in BTech Computer Science education. Our mission is to make quality computer science education accessible to everyone.</p>
+                <p>We offer industry-relevant curriculum, hands-on projects, and mentorship from experienced professionals to help you build a successful career in technology.</p>
+                <div class="icons-container">
+                    <div class="icons">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>50+ Courses</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>10,000+ Students</span>
+                    </div>
+                    <div class="icons">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>50+ Faculty</span>
+                    </div>
+                </div>
+               
